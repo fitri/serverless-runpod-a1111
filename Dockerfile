@@ -15,11 +15,9 @@ RUN apt-get update && \
     apt-get autoremove -y && rm -rf /var/lib/apt/lists/* && apt-get clean -y
 
 # Install Python dependencies (Worker Template)
-COPY builder/requirements.txt /requirements.txt
-RUN source /workspace/venv/bin/activate
-RUN pip install --upgrade pip && \
-    pip install --upgrade -r /requirements.txt --no-cache-dir && \
-    rm /requirements.txt
+RUN /bin/bash -c "source /workspace/venv/bin/activate && \
+    pip install --upgrade pip && \
+    pip install --upgrade -r /requirements.txt --no-cache-dir"
 
 # Add src files (Worker Template)
 ADD src .
