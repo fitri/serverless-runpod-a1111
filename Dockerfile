@@ -5,7 +5,7 @@ FROM runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set the working directory
-WORKDIR /workspace/stable-diffusion-webui
+WORKDIR /workspace/stable-diffusion-models
 
 # Update and upgrade the system packages (Worker Template)
 RUN apt-get update && \
