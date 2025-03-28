@@ -14,14 +14,9 @@ RUN apt-get update && \
     fonts-dejavu-core rsync git jq moreutils aria2 wget libgoogle-perftools-dev procps && \
     apt-get autoremove -y && rm -rf /var/lib/apt/lists/* && apt-get clean -y
 
-RUN ls -l .
 # Install Python dependencies (Worker Template)
-#RUN /bin/bash -c "source /workspace/venv/bin/activate && \
-#    pip install --upgrade pip && \
-#    pip install --upgrade -r /requirements.txt --no-cache-dir"
-
-# Add src files (Worker Template)
-ADD src .
+RUN pip install --upgrade pip && \
+    pip install --upgrade -r /requirements.txt --no-cache-dir"
 
 # Cleanup section (Worker Template)
 RUN apt-get autoremove -y && \
