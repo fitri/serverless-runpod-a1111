@@ -2,7 +2,7 @@
 
 echo "Worker Initiated"
 
-echo "Source virtual env"
+echo "Sourcing virtual env"
 source /workspace/venv/bin/activate
 
 echo "Starting WebUI API"
